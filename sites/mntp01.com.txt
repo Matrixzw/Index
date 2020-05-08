@@ -1,0 +1,59 @@
+{
+    "title": "mntp01.com",
+    "indexUrl": "https://www.mntp01.com/XiuRen/{pageStr:index{page:1}.html}",
+    "indexRule": {
+        "item": {
+            "selector": "div.biank1"
+        },
+        "cover": {
+            "fun": "attr",
+            "param": "src",
+            "selector": "a>img"
+        },
+        "datetime": {
+            "fun": "html",
+            "selector": "a+br",
+            "regex": "更新:(.*)"
+        },
+        "idCode": {
+            "fun": "attr",
+            "param": "href",
+            "selector": " a",
+            "regex": "(/.*).html"
+        },
+        "title": {
+            "fun": "attr",
+            "param": "title",
+            "selector": "a>img"
+        },
+        "description": {
+            "selector": "div.biank1",
+            "fun": "html",
+            "regex": "(HOT:\\d+)"
+        }
+    },
+    "galleryUrl": "https://www.mntp01.com{idCode:}{pageStr:_{page:0}}.html",
+    "galleryRule": {
+        "pictureRule": {
+            "item": {
+                "selector": "div.img>p>img"
+            },
+            "thumbnail": {
+                "fun": "attr",
+                "param": "src",
+                "selector": "img"
+            },
+            "url": {
+                "fun": "attr",
+                "param": "src",
+                "selector": "img"
+            }
+        },
+        "datetime": {
+            "selector": "table:nth-child(6) tr:last-child",
+            "fun": "text",
+            "regex": "发布：(\\d.*\\d)"
+        }
+    },
+    "versionCode": 1
+}
